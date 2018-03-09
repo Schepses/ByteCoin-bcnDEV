@@ -18,9 +18,9 @@ All commands below are adopted for Ubuntu, other distributions may need an other
 
 To go futher you have to have a number of packages and utilities.
 
-* `build-essentials` package:
+* `build-essential` package:
     ```
-    $> sudo apt-get install build-essentials
+    $> sudo apt-get install build-essential
     ```
 
 * CMake (3.5 or newer):
