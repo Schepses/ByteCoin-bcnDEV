@@ -47,7 +47,7 @@ Git-clone (or git-pull) Bytecoin source code in that folder:
 $bcndev> git clone https://github.com/bcndev/bytecoin.git
 ```
 
-Put LMDB and SQLite3 source code in `bcndev` folder (source files are referenced via relative paths, so you do not need to separately build it):
+Put LMDB source code in `bcndev` folder (source files are referenced via relative paths, so you do not need to separately build it):
 ```
 $bcndev> git clone https://github.com/LMDB/lmdb.git
 ```
