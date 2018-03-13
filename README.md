@@ -47,12 +47,12 @@ Git-clone (or git-pull) Bytecoin source code in that folder:
 $bcndev> git clone https://github.com/bcndev/bytecoin.git
 ```
 
-Put LMDB source code in `bcndev` folder (source files are referenced via relative paths, so you do not need to separately build it):
+Put LMDB and SQLite3 source code in `bcndev` folder (source files are referenced via relative paths, so you do not need to separately build it):
 ```
 $bcndev> git clone https://github.com/LMDB/lmdb.git
 ```
 
-Download amalgamated [SQLite 3](https://www.sqlite.org/download.html) or git(https://github.com/azadkuh/sqlite-amalgamation) and unpack it into `bcndev/sqlite` folder (source files are referenced via relative paths, so you do not need to separately build it).
+Put SQLite3 source code (sqlite-amalgamation) in `bcndev/sqlite` folder.
 ```
 $bcndev> git clone https://github.com/azadkuh/sqlite-amalgamation
 $bcndev> mv sqlite-amalgamation/ sqlite
