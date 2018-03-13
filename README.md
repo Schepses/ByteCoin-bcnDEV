@@ -18,9 +18,9 @@ All commands below are adopted for Ubuntu, other distributions may need an other
 
 To go futher you have to have a number of packages and utilities.
 
-* `build-essentials` package:
+* `build-essential` package:
     ```
-    $> sudo apt-get install build-essentials
+    $> sudo apt-get install build-essential
     ```
 
 * CMake (3.5 or newer):
@@ -36,11 +36,10 @@ To go futher you have to have a number of packages and utilities.
     $> cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
     ```
     If version is too old, follow instructions on [the official site](http://www.boost.org/users/download/).
-
-Then create directory `bcndev` somewhere and go there:
+    
+Then create directory bcndev somewhere and go there:
 ```
-$> mkdir bcndev
-$> cd bcndev
+$> mkdir bcndev && cd $_
 ```
 
 Git-clone (or git-pull) Bytecoin source code in that folder:
@@ -53,10 +52,16 @@ Put LMDB source code in `bcndev` folder (source files are referenced via relativ
 $bcndev> git clone https://github.com/LMDB/lmdb.git
 ```
 
+Download amalgamated [SQLite 3](https://www.sqlite.org/download.html) or git(https://github.com/azadkuh/sqlite-amalgamation) and unpack it into `bcndev/sqlite` folder (source files are referenced via relative paths, so you do not need to separately build it).
+```
+$bcndev> git clone https://github.com/azadkuh/sqlite-amalgamation
+$bcndev> mv sqlite-amalgamation/ sqlite
+```
+
 Create build directory inside bytecoin, go there and run CMake and Make:
 ```
-$bcndev> mkdir bytecoin/build
-$bcndev> cd bytecoin/build
+$bcndev> cd bytecoin
+$bcndev/bytecoin> mkdir build && cd $_
 $bcndev/bytecoin/build> cmake ..
 $bcndev/bytecoin/build> time make -j4
 ```
@@ -77,10 +82,7 @@ $bcndev/openssl> time make -j4
 $bcndev/openssl> cd ..
 ```
 
-Download amalgamated [SQLite 3](https://www.sqlite.org/download.html) and unpack it into `bcndev/sqlite` folder (source files are referenced via relative paths, so you do not need to separately build it).
-
 Below are the commands which add OpenSSL support and switch from LMDB to SQLite by providing options to CMake:
-
 ```
 $bcndev> mkdir bytecoin/build
 $bcndev> cd bytecoin/build
@@ -170,8 +172,6 @@ Download amalgamated [SQLite 3](https://www.sqlite.org/download.html) and unpack
 You add OpenSSL support or switch from LMDB to SQLite by providing options to CMake:
 
 ```
-$bcndev> mkdir bytecoin/build
-$bcndev> cd bytecoin/build
 $bcndev/bytecoin/build> cmake -DBYTECOIN_SSL=1 -DBYTECOIN_SQLITE=1 ..
 $bcndev/bytecoin/build> time make -j4
 ```
