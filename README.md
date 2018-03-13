@@ -84,8 +84,6 @@ $bcndev/openssl> cd ..
 
 Below are the commands which add OpenSSL support and switch from LMDB to SQLite by providing options to CMake:
 ```
-$bcndev> mkdir bytecoin/build
-$bcndev> cd bytecoin/build
 $bcndev/bytecoin/build> cmake -DBYTECOIN_SSL=1 -DBYTECOIN_SQLITE=1 ..
 $bcndev/bytecoin/build> time make -j4
 ```
